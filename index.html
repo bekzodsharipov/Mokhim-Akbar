@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokhim Akbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #030D22;
+        }
+
+        .webinar {
+            padding-top: 25px;
+            padding-bottom: 44px;
+        }
+
+        .webinar__bg {
+            position: absolute;
+            top: -23px;
+            left: 50%;
+            max-width: 390px;
+            transform: translateX(-50%);
+        }
+
+        .webinar__container {
+            max-width: 390px;
+            margin: 0 auto;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .container {
+            max-width: 390px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .webinar__title {
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 300;
+            font-size: clamp(13px, 4vw, 15.5px);
+            line-height: 100%;
+            color: white;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .webinar__subtitle {
+            font-family: Bronex, sans-serif;
+            font-weight: 700;
+            font-size: clamp(95px, 29vw, 105px);
+            text-align: center;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .webinar__number {
+            font-family: "Great Vibes", sans-serif;
+            font-weight: 400;
+            font-size: 66px;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: #FF7A2F;
+            margin-left: 210px;
+            margin-top: -25px;
+        }
+
+        .webinar__images {
+            max-width: 267px;
+            width: 100%;
+            height: auto;
+            margin-top: -110px;
+        }
+
+        .webinar__shaddow {
+            position: absolute;
+            top: 290px;
+            z-index: 5;
+        }
+
+        .webinar__btn {
+            font-family: Bronex, sans-serif;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: #4A381C;
+            padding: 24px 0;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0px 2.91px 25px 0px #FDC56C66;
+            max-width: 327px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(270deg, #FECC63 3.64%, #FFE7B9 40.8%, #FED48C 91.15%);
+            box-shadow: 0px 4px 0px 0px #CCA665;
+            border-radius: 15px;
+        }
+
+        .webinar__content {}
+
+        .webinar__content-title {
+            font-family: Bronex, sans-serif;
+            font-weight: 700;
+            font-size: 46px;
+            line-height: 100%;
+            text-transform: uppercase;
+            margin-bottom: 80px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .webinar__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .webinar__top {
+            background-color: white;
+            border-radius: 30px;
+            padding: 57px 18px 16px 18px;
+        }
+
+        .webinar__top-min {
+            max-width: 232px;
+            width: 100%;
+            background: linear-gradient(180deg, #C4C4C4 0%, rgba(196, 196, 196, 0) 100%);
+            border: 1px solid #6C6C6C;
+            border-radius: 120px;
+            height: 112px;
+            margin-top: -110px;
+            position: relative;
+            z-index: -3; margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .webinar__top-img {
+            background-color: #030D22;
+            max-width: 198px;
+            width: 100%;
+            border: 1px solid #6C6C6C;
+            border-radius: 100px;
+            text-align: center;
+            padding: 15px 0 7px 0;
+            margin-top: -100px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .webinar__box-title {
+            font-family: Bronex, sans-serif;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 100%;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .webinar__nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 17px;
+        }
+
+        .webinar__nav li {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+        }
+
+        .webinar__sell {
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 500;
+            font-size: 26.25px;
+            line-height: 100%;
+            opacity: 50%;
+            text-decoration: line-through;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .webinar__sells {
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 700;
+            font-size: 39px;
+            line-height: 100%;
+            text-align: center;
+            color: #0260E8;
+        }
+
+        .webinar__sells span {
+            font-size: 22px;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/modal.css" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="./css/modal.css" />
+    </noscript>
+</head>
+
+<body>
+
+    <section class="webinar">
+        <img class="webinar__bg" src="./images/bg.avif" loading="lazy" decoding="async" width="390" height="600"
+            alt="bg">
+        <div class="webinar__container container">
+            <h1 class="webinar__title">Charchoqdan moliyaviy erkinlikka yo'l</h1>
+            <h2 class="webinar__subtitle">yechim bor</h2>
+            <h3 class="webinar__number">5.0</h3>
+            <img class="webinar__images" src="./images/speaker.avif" loading="lazy" decoding="async" width="267"
+                height="341" alt="speaker">
+            <img class="webinar__shaddow" src="./images/shaddow.avif" loading="lazy" decoding="async" alt="shaddow">
+
+            <button class="webinar__btn" style="margin-bottom: 44px;">Joy band qilish</button>
+
+            <div class="webinar__content">
+                <h2 class="webinar__content-title">kurs tariflari</h2>
+
+                <div class="webinar__box">
+                    <div class="webinar__top" style="margin-bottom: 85px;">
+                        <div class="webinar__top-min">
+                        </div>
+                        <div class="webinar__top-img">
+                            <img src="./images/almaz.avif" loading="lazy" decoding="async" width="73" height="60"
+                                alt="almaz">
+                        </div>
+
+                        <div style="position: relative; z-index: 20;">
+                            <h3 class="webinar__box-title">Standart</h3>
+
+                            <ul class="webinar__nav">
+                                <li>
+                                    <img src="./images/verfiy.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>5 ta <b>onlayn</b> dars</p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>1 ta <b>jonli efir</b></p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>Mualliflik <b>meditatsiyalari</b></p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>Nargiz Sattarovaga <br> <b>savollaringizni berish</b> imkoniyati</p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p><b>Kuratorlar</b> yordam <br> beradigan umumiy chat</p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>Kurs tugagandan so‘ng 2 hafta <br> davomida <b>darslar</b> va <b>materiallardan
+                                            <br>
+                                            foydalanish</b></p>
+                                </li>
+                            </ul>
+
+                            <h4 class="webinar__sell">2 500 000</h4>
+                            <h4 class="webinar__sells">1 990 000 <span>so'm</span></h4>
+
+                            <button class="webinar__btn" style="font-size: 36px;">Joy band qilish</button>
+                        </div>
+                    </div>
+
+                    <div class="webinar__top">
+                        <div class="webinar__top-min" style="background: linear-gradient(180deg, #FF7A2F 0%, rgba(255, 122, 47, 0.396247) 60.38%, rgba(255, 122, 47, 0) 100%);">
+                        </div>
+                        <div class="webinar__top-img">
+                            <img src="./images/almaz2.avif" loading="lazy" decoding="async" width="73" height="60"
+                                alt="almaz">
+                        </div>
+
+                        <div style="position: relative; z-index: 20;">
+                            <h3 class="webinar__box-title">VIP</h3>
+
+                            <ul class="webinar__nav">
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>5 ta <b>onlayn</b> dars</p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>1 ta <b>jonli efir</b></p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>Mualliflik meditatsiyalari</p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>Nargiz Sattarovaga <br> <b>savollaringizni berish</b> imkoniyati</p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p><b>Kuratorlar</b> yordam <br> beradigan umumiy chat</p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>Kurs tugagandan so‘ng 1 oy davomida <br> <b>darslar va materiallardan foydalanish</b></p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>“Chakralar” bo‘yicha <b>bonus</b> dars</p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>2 ta <b>jonli tahlillar zapisi</b></p>
+                                </li>
+                                <li>
+                                    <img src="./images/verfiy2.png" loading="lazy" decoding="async" width="10"
+                                        height="10" alt="verfiy">
+                                    <p>1 ta <b>jonli uchrashuv</b></p>
+                                </li>
+                            </ul>
+
+                            <h4 class="webinar__sell">3 500 000</h4>
+                            <h4 class="webinar__sells" style="color: #FF5E04;">2 490 000 <span>so'm</span></h4>
+
+                            <button class="webinar__btn" style="font-size: 36px;">Joy band qilish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modal -->
+    <div id="registrationModal" class="homeModal" style="display: none">
+        <div class="homeModalOverlay"></div>
+        <div class="homeFormContainer">
+            <button type="button" class="closeButton" id="closeModalBtn" aria-label="Modalni yopish" title="Yopish">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                    <path d="M1 11L11 1M1 1.00001L11 11" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+            <div class="homeFormTop">
+                <h1 class="homeFormTopTitle">
+                    Bepul qatnashish uchun ma'lumotlaringizni kiriting!
+                </h1>
+            </div>
+            <form id="registrationForm" name="contact-form">
+                <!-- ISM -->
+                <div class="HomeFormRow">
+                    <label class="HomeFormRowLabel" for="name">Ismingiz:</label>
+                    <input class="HomeFormRowInput" type="text" id="name" name="name" placeholder="Ismingizni kiriting"
+                        autocomplete="name" />
+                    <p class="homeFormErrorText" id="nameError" style="display: none">
+                        ❌ Ismingizni kiriting!
+                    </p>
+                </div>
+
+                <!-- TELEFON -->
+                <div class="HomeFormRow">
+                    <label class="HomeFormRowLabel" for="phone">Telefon raqamingiz:</label>
+
+                    <div class="phone-input-container">
+                        <!-- LEFT: country -->
+                        <button type="button" type="button" class="selected-country" id="selectedCountry">
+                            <span class="selected-flag" id="selectedCountryFlag">🇺🇿</span>
+
+                            <svg id="dropdownIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                            <span class="selected-code" id="selectedCountryCodeText">+998</span>
+                        </button>
+
+                        <!-- dropdown -->
+                        <div class="country-dropdown" id="countryDropdown" style="display:none"></div>
+
+                        <!-- RIGHT: phone input (number span inside) -->
+                        <div class="phone-field">
+                            <input class="HomeFormRowInput phone-input" type="tel" id="phone" name="phone"
+                                inputmode="numeric" placeholder="88 888 88 88" autocomplete="tel"
+                                style="border: none; background-color: transparent;padding-left: 5px;" />
+                        </div>
+                    </div>
+
+                    <p class="homeFormErrorText" id="phoneError" style="display:none">
+                        ❌ Telefon raqam mos emas!
+                    </p>
+                </div>
+
+                <button type="submit" class="HomeFormBtn" id="submitBtn">
+                    DAVOM ETISH
+                </button>
+            </form>
+
+        </div>
+    </div>
+    <script defer src="./js/phoneFormatter.js"></script>
+    <script defer src="./js/app.js"></script>
+</body>
+
+</html>
